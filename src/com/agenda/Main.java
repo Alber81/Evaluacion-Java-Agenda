@@ -1,9 +1,13 @@
 package com.agenda;
 
+import com.agenda.model.Contacts;
 import com.agenda.model.ContactsList;
 import com.agenda.util.*;
 
+import java.util.LinkedList;
 import java.util.List;
+
+import static com.agenda.model.ContactsList.list;
 
 public class Main {
 
@@ -18,7 +22,7 @@ public class Main {
         if ( read != null) {
             ModifyFile.readFile("agenda.txt");
         } else {
-            ModifyFile.createFile("agenda.txt", List<String>());
+            ModifyFile.createFile("agenda.txt", LinkedList<ContactsList>);
         }
 
         while (!end) {

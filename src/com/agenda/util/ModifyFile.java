@@ -8,7 +8,6 @@ import java.util.List;
 
 public class ModifyFile {
 
-
     public static void createFile(String file, List<String> contactsData) throws IOException {
         FileWriter writer = new FileWriter(file);
         int size = contactsData.size();
