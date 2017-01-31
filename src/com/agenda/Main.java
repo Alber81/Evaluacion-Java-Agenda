@@ -1,11 +1,9 @@
 package com.agenda;
 
-import com.agenda.model.Contacts;
 import com.agenda.model.ContactsList;
-import com.agenda.util.Command;
-import com.agenda.util.CommandParser;
-import com.agenda.util.Message;
-import com.agenda.util.Prompt;
+import com.agenda.util.*;
+
+import java.util.List;
 
 public class Main {
 
@@ -14,6 +12,14 @@ public class Main {
         boolean end = false;
 
         System.out.println("Welcome to Contacts!" + "\n");
+
+        List<String> read = ModifyFile.readFile("agenda.txt");
+
+        if ( read != null) {
+            ModifyFile.readFile("agenda.txt");
+        } else {
+            ModifyFile.createFile("agenda.txt", List<String>());
+        }
 
         while (!end) {
             Prompt.print();
