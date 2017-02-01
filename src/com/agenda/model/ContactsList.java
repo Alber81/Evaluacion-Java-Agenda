@@ -21,10 +21,15 @@ public class ContactsList {
 
 
     public static void printList() {
+
+        if (list.size() == 0) {
+            System.out.println("No Contacts!");
+        } else {
             for (Contacts contacts : list) {
                 System.out.println(ContactsList.list.indexOf(contacts) + " = " + contacts.getName() + " = " + contacts.getPhone() );
-            } // if(list == null)
+            }
         }
+    }
 
         public static void add() {
 

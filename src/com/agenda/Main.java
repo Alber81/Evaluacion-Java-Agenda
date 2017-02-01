@@ -17,17 +17,11 @@ public class Main {
 
         System.out.println("Welcome to Contacts!" + "\n");
 
-        List<String> read = ModifyFile.readFile("agenda.txt");
+        ModifyFile.readContactTxt();
 
-        if ( read != null) {
-            ModifyFile.readFile("agenda.txt");
-        } else {
-            try {
-                ModifyFile.createFile("agenda.txt", read);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+
+        //listContact = ContactsList.getList();
+
 
         while (!end) {
             Prompt.print();
@@ -50,6 +44,7 @@ public class Main {
                 ContactsList.delete();
                 break;
             case QUIT:
+
                 Message.printQuit();
                 end = true;
                 break;

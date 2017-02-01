@@ -2,7 +2,7 @@ package com.agenda.model;
 
 
 public class Contacts {
-
+    // private name and phone
     String name;
     String phone;
 

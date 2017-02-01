@@ -1,11 +1,15 @@
 package com.agenda.util;
 
 
+import com.agenda.model.Contacts;
+import com.agenda.model.ContactsList;
+
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ModifyFile {
+
 
     public static void createFile(String file, List<String> contactsData) throws IOException {
         FileWriter writer = new FileWriter(file);
@@ -40,4 +44,21 @@ public class ModifyFile {
         }
 
         return lines; }
+
+    public static void readContactTxt() {
+        LinkedList<Contacts> listContact = new LinkedList<>();
+
+        List<String> listTxt = ModifyFile.readFile("agenda.txt");
+
+        for (int i = 0; i < listTxt.size(); i = i + 2) {
+
+            Contacts person = new Contacts();
+            person.setName(listTxt.get(i));
+            person.setPhone(listTxt.get(i+1));
+
+            listContact.add(person);
+
+        }
+        ContactsList.setList(listContact);
+    }
 }
