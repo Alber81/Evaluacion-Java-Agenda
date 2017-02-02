@@ -1,6 +1,5 @@
 package com.agenda.util;
 
-
 import com.agenda.model.Contacts;
 import com.agenda.model.ContactsList;
 
@@ -9,7 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ModifyFile {
-
 
     public static void createFile(String file, List<String> contactsData) throws IOException {
         FileWriter writer = new FileWriter(file);
@@ -29,7 +27,6 @@ public class ModifyFile {
         try {
             fileReader = new FileReader(fileName);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         List<String> lines = new LinkedList<>();
@@ -43,7 +40,8 @@ public class ModifyFile {
             e.printStackTrace();
         }
 
-        return lines; }
+        return lines;
+    }
 
     public static void readContactTxt() {
         LinkedList<Contacts> listContact = new LinkedList<>();
@@ -61,4 +59,5 @@ public class ModifyFile {
         }
         ContactsList.setList(listContact);
     }
+
 }

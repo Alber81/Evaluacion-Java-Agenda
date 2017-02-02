@@ -1,6 +1,5 @@
 package com.agenda.util;
 
-
 public class CommandParser {
 
     public static Command parse(String text) {
@@ -22,4 +21,5 @@ public class CommandParser {
         }
     return Command.UNKNOWN;
     }
+
 }

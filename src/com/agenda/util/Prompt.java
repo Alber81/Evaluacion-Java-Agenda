@@ -1,13 +1,20 @@
 package com.agenda.util;
 
-
 import com.agenda.model.ContactsList;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Prompt {
-    public static void print() {
 
+    public static void init() {
+        File agenda = new File("agenda.txt");
+        if (agenda.exists()){
+            ModifyFile.readContactTxt();
+        }
+    }
+
+    public static void print() {
         System.out.print("(" + ContactsList.getList().size() + ") " + "> ");
     }
 
@@ -17,9 +24,4 @@ public class Prompt {
         return scanner.nextLine();
     }
 
-    public static int readNumber() {
-        Scanner scanner = new Scanner(System.in);
-
-        return scanner.nextInt();
-    }
 }

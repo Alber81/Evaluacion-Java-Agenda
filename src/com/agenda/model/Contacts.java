@@ -1,10 +1,9 @@
 package com.agenda.model;
 
-
 public class Contacts {
-    // private name and phone
-    String name;
-    String phone;
+
+    private String name;
+    private String phone;
 
     public Contacts() {
 
@@ -30,4 +29,5 @@ public class Contacts {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
 }
